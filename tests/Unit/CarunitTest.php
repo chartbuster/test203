@@ -57,4 +57,15 @@ class CarunitTest extends TestCase
         $year = (int) $car->year;
         $this->assertInternalType('int',$year);
     }
+
+    public function testCarMake()
+    {
+        $car = Car::inRandomOrder()->first();
+        $value = (int) $car->make;
+        $this->assertContains($value,['Ford','Honda','Toyota']);
+    }
+
+
+
+
 }
