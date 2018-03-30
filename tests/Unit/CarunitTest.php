@@ -65,6 +65,14 @@ class CarunitTest extends TestCase
         $this->assertContains($value,['Ford','Honda','Toyota']);
     }
 
+    public function testCarModel()
+    {
+        $car = Car::inRandomOrder()->first();
+        $this->assertInternalType('string',$car->Model);
+        $this->assertInstanceOf('App\Car',$car);
+    }
+
+
 
 
 
