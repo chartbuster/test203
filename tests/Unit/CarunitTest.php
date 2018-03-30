@@ -22,4 +22,13 @@ class CarunitTest extends TestCase
         $car->Year = '2018';
         $this->assertTrue(true);
     }
+
+    public function testUpdateCar()
+    {
+        $car = Car::find(9);
+        $car->Year = '2000';
+
+
+        $this->assertTrue($car->save());
+    }
 }
