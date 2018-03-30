@@ -50,4 +50,11 @@ class CarunitTest extends TestCase
         $carCount = $car->count();
         $this->assertEquals(50, $carCount);
     }
+
+    public function testCarYear()
+    {
+        $car = Car::inRandomOrder()->first();
+        $year = (int) $car->year;
+        $this->assertInternalType('int',$year);
+    }
 }
