@@ -31,4 +31,16 @@ class CarunitTest extends TestCase
 
         $this->assertTrue($car->save());
     }
+
+    public function testDeleteCar()
+    {
+        $car = new Car();
+        $car->Make = 'Honda';
+        $car->Model= 'Hybrid';
+        $car->Year = '2016';
+        $car->save();
+
+
+        $this->assertTrue($car->delete());
+    }
 }
